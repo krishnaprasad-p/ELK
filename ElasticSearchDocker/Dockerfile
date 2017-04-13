@@ -13,8 +13,9 @@ RUN tar -xf elasticsearch-5.2.2.tar.gz
 RUN rm elasticsearch-5.2.2.tar.gz
 
 RUN adduser -D elas
+RUN chown -R elas /elasticsearch
 USER elas
-RUN chown -R elas /elasticsearch 
+
 
 COPY elasticsearch.yml /elasticsearch/elasticsearch-5.2.2/config/elasticsearch.yml
 COPY logging.yml /elasticsearch/elasticsearch-5.2.2/config/logging.yml
