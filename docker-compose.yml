@@ -3,6 +3,8 @@ version : '2'
 services:
     elasticsearch:
         build: ./ElasticSearchDocker
+        ports:
+            - 9200:9200
         volumes:
             - ./ElasticSearchDocker/esdata:/elasticsearch/elasticsearch-5.2.2/data
     
